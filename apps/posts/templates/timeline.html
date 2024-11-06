@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'twot-style.css' %}">
+{% endblock styles %}
+
+{% block content %}
+
+<main style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
+{% for twot in twots %}
+{% include "post.html" %}
+{% endfor %}
+</main>
+
+{% endblock content %}
+

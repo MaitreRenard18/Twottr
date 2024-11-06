@@ -1,0 +1,47 @@
+{% load static %}
+
+<div class="twot">
+    <div class="twot-header">
+        <a href="{% url 'account_view' username=twot.author.username %}">
+            <div class="blurred-container">
+                <img class="blurred" src="{{ twot.author.profile_picture.url }}" alt="{{twot.author.username}}'s profile picture">
+                <img class="twot-pfp" src="{{ twot.author.profile_picture.url }}" alt="{{twot.author.username}}'s profile picture">
+            </div>
+
+            <div class="twot-author-username-container">
+                <p class="prompt-semibold twot-author-displayname">{{ twot.author.display_name }}</p>
+                <p class="prompt-light twot-author-username">@{{ twot.author.username }}</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="twot-body">
+        <div class="twot-content">
+            <p class="prompt-medium" style="margin: 0px; font-size: calc(max(20px, 150px - {{ twot.content|length }} * 2px));">
+                {{ twot.content }}
+            </p>                      
+        </div>
+        
+        <div class="twot-info-container">
+            <div class="twot-info">
+                <span class="material-symbols-rounded">favorite</span>
+                <p> {{ twot.liked_by.count }} </p>
+            </div>
+
+            <div class="twot-info">
+                <span class="material-symbols-rounded">comment</span>
+                <p> {{ twot.liked_by.count }} </p>
+            </div>
+
+            <div class="twot-info">
+                <span class="material-symbols-rounded">bookmark</span>
+                <p> {{ twot.liked_by.count }} </p>
+            </div>
+
+            <div class="twot-info">
+                <span class="material-symbols-rounded">share</span>
+                <p> {{ twot.liked_by.count }} </p>
+            </div>
+        </div>
+    </div>
+</div>
