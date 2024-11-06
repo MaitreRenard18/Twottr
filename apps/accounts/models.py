@@ -4,6 +4,7 @@ from django.db import models
 
 class User(AbstractUser):
     profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True, null=True, default='profile_pictures/default.jpg')
+    banner = models.ImageField(upload_to='banners/', blank=True, null=True, default='banners/default.jpg')
     bio = models.TextField(blank=True, null=True, max_length=500)
 
 
